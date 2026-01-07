@@ -17,22 +17,27 @@ if (!API_URL) {
   throw new Error('API_URL is not defined')
 }
 
-export async function getPolicies() {
-  const res = await fetch(`${API_URL}/policies`, {
-    cache: 'no-store',
+export async function getPolicies(params: {
+  page?: number
+  limit?: number
+  status?: string
+  type?: string
+  search?: string
+}) {
+  const query = new URLSearchParams()
+  Object.entries(params).forEach(([key, value]) => {
+    if (value) query.set(key, String(value))
   })
 
+  const res = await fetch(`/api/policies?${query.toString()}`)
   if (!res.ok) {
-    const text = await res.text()
     console.error('Fetch policies failed:', {
       status: res.status,
       statusText: res.statusText,
       body: text,
     })
-
     throw new Error('Failed to fetch policies')
   }
-
   return res.json()
 }
 
