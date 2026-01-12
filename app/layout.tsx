@@ -1,6 +1,6 @@
 import './globals.css'
-import Sidebar from '@/components/Sidebar'
-import TopNav from '@/components/TopNav'
+import Sidebar from '@/components/layout/Sidebar'
+import TopNav from '@/components/layout/TopNav'
 
 export const metadata = {
   title: 'InsureDesk',

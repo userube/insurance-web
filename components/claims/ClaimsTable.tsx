@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Claim } from '@/lib/claims'
-import StatusBadge from '@/components/StatusBadge'
+import StatusBadge from '@/components/ui/StatusBadge'
 
 export default function ClaimsTable({ claims }: { claims: Claim[] }) {
   return (

@@ -5,9 +5,9 @@ import { LayoutDashboard, FileText, Users, Settings } from 'lucide-react'
 
 const menu = [
   { name: 'Overview', href: '/', icon: LayoutDashboard },
-  { name: 'Policies', href: '/policies', icon: FileText },
-  { name: 'Claims', href: '/claims', icon: FileText },
-  { name: 'Customers', href: '/customers', icon: Users },
+  { name: 'Policies', href: '/dashboard/policies', icon: FileText },
+  { name: 'Claims', href: '/dashboard/claims', icon: FileText },
+  { name: 'Customers', href: '/dashboard/customers', icon: Users },
 ]
 
 export default function Sidebar() {
